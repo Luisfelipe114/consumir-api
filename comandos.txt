@@ -1,0 +1,40 @@
+instalando prettir e eslint:
+npm i @babel/eslint-plugin prettier eslint-config-prettier eslint-plugin-prettier -D
+
+instalando o styled-components:
+npm i styled-components
+
+instalando react-icons:
+npm i react-icons
+
+instalando o react-router-dom:
+npm i react-router-dom@5.2.0
+
+instalando o history: //para rota
+npm i history@4.10.1
+
+instalando prop-types: //para fazer validações de argumentos de componentes
+npm i prop-types
+
+instalando o react-toastify: //para mostrar mensagens ao usuário
+npm i react-toastify
+
+instalando o axios:
+npm i axios
+
+instalando o redux:
+npm i redux react-redux
+
+instalando o redux-saga:(para middlewares)
+npm i redux-saga
+
+instalando o redux-persist(para persistir dados):
+npm i redux-persist
+
+configurando eslint:
+npx eslint --init
+
+*link de apoio para toastify:
+https://fkhadra.github.io/react-toastify/introduction
+
+https://fkhadra.github.io/react-toastify/use-a-custom-id/

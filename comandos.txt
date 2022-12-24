@@ -31,6 +31,9 @@ npm i redux-saga
 instalando o redux-persist(para persistir dados):
 npm i redux-persist
 
+instalando o lodash(para atributos que podem não existir):
+npm i lodash
+
 configurando eslint:
 npx eslint --init
 

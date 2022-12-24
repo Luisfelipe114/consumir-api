@@ -1,5 +1,8 @@
 import axios from 'axios';
 
-export default axios.create({
-  baseURL: 'http://192.168.0.43',
-});
+const axiosConfig = axios.create();
+
+// baseURL: 'http://192.168.0.102',
+axiosConfig.defaults.baseURL = 'http://localhost:3001';
+
+export default axiosConfig;

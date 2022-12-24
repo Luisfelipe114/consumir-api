@@ -29,5 +29,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
     'default-param-last': 'off',
     'no-unused-vars': 'off',
+    'array-callback-return': 'off',
+    'react/jsx-curly-brace-presence': 'off',
   },
 };

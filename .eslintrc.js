@@ -31,5 +31,6 @@ module.exports = {
     'no-unused-vars': 'off',
     'array-callback-return': 'off',
     'react/jsx-curly-brace-presence': 'off',
+    'react/jsx-no-bind': 'off',
   },
 };

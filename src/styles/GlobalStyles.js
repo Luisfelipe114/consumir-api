@@ -31,6 +31,11 @@ export default createGlobalStyle`
     font-weight: 700;
   }
 
+  button:hover {
+    transition: 0.3s;
+    filter: brightness(80%);
+  }
+
   a {
     text-decoration: none;
     color: ${colors.primaryColor};

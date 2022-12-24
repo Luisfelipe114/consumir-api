@@ -34,6 +34,9 @@ npm i redux-persist
 instalando o lodash(para atributos que podem não existir):
 npm i lodash
 
+instalando o validor:
+npm i validator
+
 configurando eslint:
 npx eslint --init
 

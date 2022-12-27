@@ -2,14 +2,14 @@ import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
 
 export default (reducers) => {
-  const persistReducers = persistReducer(
+  const persistedReducers = persistReducer(
     {
       key: 'CONSUMIR-API',
       storage,
-      whitelist: ['auth'],
+      whitelist: ['reducerAuth'], // o nome usado em rootReducer
     },
     reducers
   );
 
-  return persistReducers;
+  return persistedReducers;
 };

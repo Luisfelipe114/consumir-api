@@ -5,10 +5,14 @@ import { get } from 'lodash';
 import axios from '../../services/axios';
 import history from '../../services/history';
 
+import Loading from '../../components/Loading';
+
 import { Container } from '../../styles/GlobalStyles';
 import { Form, Title } from './styled';
 
 export default function Register() {
+  const [isLoading, setIsLoading] = useState(false);
+
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -34,6 +38,8 @@ export default function Register() {
 
     if (formErrors) return;
 
+    setIsLoading(true);
+
     try {
       await axios.post('/users/', {
         nome,
@@ -42,16 +48,19 @@ export default function Register() {
       });
 
       toast.success('Cadastro realizado com sucesso');
+      setIsLoading(false);
       history.push('/login');
     } catch (err) {
       const status = get(err, 'response.status', 0);
       const erros = get(err, 'response.data.errors', []);
       erros.map((erro) => toast.error(erro));
+      setIsLoading(false);
     }
   }
 
   return (
     <Container>
+      <Loading isLoading={isLoading} />
       <Title>Crie sua conta</Title>
 
       <Form onSubmit={handleSubmit}>

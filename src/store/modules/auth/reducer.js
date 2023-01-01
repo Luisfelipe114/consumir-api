@@ -29,6 +29,29 @@ export default function reducerAuth(state = initialState, action) {
       return newState;
     }
 
+    case types.REGISTER_REQUEST: {
+      const newState = { ...state };
+      newState.isLoading = true;
+      return newState;
+    }
+
+    case types.REGISTER_FAIILURE: {
+      const newState = { ...state };
+      newState.isLoading = false;
+      return newState;
+    }
+
+    case types.REGISTER_SUCCESS: {
+      const newState = { ...state };
+      newState.isLoading = false;
+      // se tiver atualizando os dados
+      if (action.payload) {
+        newState.user.nome = action.payload.nome;
+        newState.user.email = action.payload.email;
+      }
+      return newState;
+    }
+
     default: {
       return state;
     }

@@ -3,13 +3,15 @@ import { get } from 'lodash';
 import PropTypes from 'prop-types';
 // import { useParams } from 'react-router-dom';
 import { isEmail, isInt, isFloat } from 'validator';
+import { FaEdit, FaUserCircle } from 'react-icons/fa';
 
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { Container } from '../../styles/GlobalStyles';
 import Loading from '../../components/Loading';
 
-import { Form, Title } from './styled';
+import { Form, Title, ProfilePicture } from './styled';
 import axios from '../../services/axios';
 import history from '../../services/history';
 import * as actions from '../../store/modules/auth/actions';
@@ -19,7 +21,7 @@ export default function Aluno({ match }) {
   // se não quiser usar o match, usa o useParams
   // import { useParams } from 'react-router-dom';
   // const { id } = useParams();
-  const id = get(match, 'params.id', 0);
+  const id = get(match, 'params.id', '');
   const [nome, setNome] = React.useState('');
   const [sobrenome, setSobrenome] = React.useState('');
   const [email, setEmail] = React.useState('');
@@ -144,6 +146,15 @@ export default function Aluno({ match }) {
     <Container>
       <Loading isLoading={isLoading} />
       <Title>{id ? 'Editar aluno' : 'Cadastrar aluno'}</Title>
+
+      {id && (
+        <ProfilePicture>
+          {foto ? <img src={foto} alt={nome} /> : <FaUserCircle size={180} />}
+          <Link to={`/fotos/${id}`}>
+            <FaEdit size={24} />
+          </Link>
+        </ProfilePicture>
+      )}
 
       <Form onSubmit={handleSubmit}>
         <input
